@@ -1,0 +1,184 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#spinner {
+  position: fixed;
+  background: #fff url("../icons/Spin-0.4s-221px.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#navigationBar,
+#navigationContainer {
+  transition: 0.4s;
+}
+details > summary {
+  list-style: none;
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+.annContent,
+.annImage {
+  transition: 0.2s;
+}
+.annCard:hover .annContent {
+  height: 80px;
+  transition: 0.2s;
+}
+.annCard:hover .annImage {
+  margin-top: -80px;
+  transition: 0.2;
+}
+.annCard {
+  box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+}
+.annCard:hover {
+  box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.301);
+  transition: 0.4s;
+}
+#dropDownElectionsNav {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#upload-image::file-selector-button {
+  background-color: #017106;
+  border-radius: 999px;
+}
+
+#upload-image::file-selector-button:hover {
+  transition: 0.2s;
+  background-color: #034919;
+}
+
+#file::file-selector-button {
+  background-color: #017106;
+  border-radius: 999px;
+}
+
+#file::file-selector-button:hover {
+  transition: 0.2s;
+  background-color: #034919;
+}
+
+#announcement-image::file-selector-button {
+  background-color: #017106;
+  padding: 0;
+  margin: 0;
+  padding: 10px;
+  margin-left: 1px;
+  margin-right: 5px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+#announcement-image::file-selector-button:hover {
+  background-color: #034919;
+}
+#edit-announcement-image::file-selector-button {
+  background-color: #017106;
+  padding: 0;
+  margin: 0;
+  padding: 10px;
+  margin-left: 1px;
+  margin-right: 5px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  padding-right: 0;
+}
+
+#edit-announcement-image::file-selector-button:hover {
+  background-color: #034919;
+}
+#edit-candidate-image::file-selector-button {
+  background-color: #017106;
+  margin: 0;
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+#edit-candidate-image::file-selector-button:hover {
+  background-color: #034919;
+}
+
+.electionCard:hover .arrowRight {
+  transition: 0.2s;
+  opacity: 1;
+}
+
+.electionCard:hover {
+  background-color: rgba(128, 128, 128, 0.103);
+  transition: 0.2s;
+}
+
+.heroShadow {
+  text-shadow: 2px 2px 10px #00000088;
+}
+
+::selection {
+  color: white;
+  background: #017106;
+}
+
+::-moz-selection {
+  color: white;
+  background: #017106;
+}
+
+/* votinginaction page below */
+
+input.hidden:checked + .gray-cover {
+  background: rgb(211, 211, 211);
+}
+
+/* admin dashboard */
+
+aside::-webkit-scrollbar {
+  background-color: transparent;
+  width: 9px;
+}
+aside::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.247);
+  opacity: 1;
+  border-radius: 9px;
+  width: 2px;
+}
+
+@media screen and (max-width: 1000px) and (min-width: 768px),
+  (min-width: 1000px) {
+  #electionsNav:hover #dropDownElectionsNav {
+    padding: 16px;
+    transition: 0.2s;
+    height: auto;
+  }
+}
+#navDropDown {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  #navDropDown {
+    display: block;
+  }
+}
+@media print {
+  section {
+    padding: 0px;
+    margin: 0px;
+  }
+  #navigationContainer,
+  #congratsTitle {
+    display: none;
+  }
+}

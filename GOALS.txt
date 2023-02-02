@@ -1,0 +1,9 @@
+1. Tanggal lahat ng dapat di makita ni client //
+    a. FaceIO //
+    b. Scheduling //
+2. Asignatories dagdag 
+3. Officer change password //
+4. Loading screen while loading 
+5. Manual testing - Testing malala 
+6. JMeter - Testing malala (load testing)
+7. Polishing kung may bugs makita
