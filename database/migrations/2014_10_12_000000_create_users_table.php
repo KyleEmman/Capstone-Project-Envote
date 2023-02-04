@@ -28,8 +28,6 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            $table->string('email');
-            $table->string('facialID');   
         });
     }
 

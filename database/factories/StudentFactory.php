@@ -22,14 +22,15 @@ class StudentFactory extends Factory
         '05'=>'SM','06'=>'BO','07'=>'SR','08'=>'AN'];
         $cNumber = "0".strval($this->faker->numberBetween(1,8));
         $randomSY = $this->faker->numberBetween(16,22);
-
+        $program = $this->faker->randomElement(['BSOM','BSIS','BSAIS','BTVTED','ACT','COMSEC','HRS', 'ABM', 'GAS']);
+        $yearLevel = $program == 'ABM' || $program == 'GAS' ? $this->faker->numberBetween(11,12) : $this->faker->numberBetween(1,4);
         return [
             'studentID' => $studIDPref[$cNumber].'-'.$randomSY.strval($cNumber).strval(sprintf('%04d',self::$number++)),
             'firstName' => $this->faker->firstName($gender = 'male'|'female'),
             'middleName' => $this->faker->lastName(),
             'lastName' => $this->faker->lastName(),
-            'program' => $this->faker->randomElement(['BSOM','BSIS','BSAIS','BTVTED','ACT','COMSEC','HRS']),
-            'yearLevel' => $this->faker->numberBetween(1,4),
+            'program' => $program,
+            'yearLevel' => $yearLevel,
             'section' => strtoupper($this->faker->randomLetter()),
             'birthDate' => $this->faker->date('Y-m-d')
         ];
