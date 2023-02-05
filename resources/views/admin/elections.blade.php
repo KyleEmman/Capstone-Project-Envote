@@ -411,6 +411,7 @@
                                     <th>Date Created</th>
                                     <th>Total Voters</th>
                                     <th>Off/On</th>
+                                    <th>Type</th>
                                     <th class = "print:hidden">Operations</th>
       
                                 </thead>
@@ -765,6 +766,13 @@
                                                     </label>
                                                 @else
                                                     -- --
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($election->for == "shs")
+                                                Senior High
+                                                @else
+                                                College
                                                 @endif
                                             </td>
                                             <td class = "px-2 print:hidden">

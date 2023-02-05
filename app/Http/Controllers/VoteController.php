@@ -39,7 +39,10 @@ class VoteController extends Controller
         $positions = $request->positions;
         $mail = new MailController;
         $candidates = Candidate::all();
-        
+        $validElection = Election::where('id', $election->id)->first();
+        if ($validElection->status != 'ongoing') {
+            return redirect('/');
+        }
         $votes = Vote::all();
         if(count($votes->where('studentID', auth()->user()->studentID)->where('election_id', $election->id)) != 0){
             return redirect('/');

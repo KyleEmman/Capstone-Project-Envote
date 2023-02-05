@@ -25,7 +25,7 @@
                 * {
                     margin: 0;
                 }
-                #main, #main *, #logo, #logo > *, #envote, #author {
+                #main, #main *, #logo, #logo > *, #envote, #author, #assignatories1, #assignatories2, #assignatories3, #assignatories4 {
                     visibility: visible;
                 }
                 #main {
@@ -56,6 +56,30 @@
                     top: 0;
                     right: 0;
                 }
+                #assignatories1 {
+                    display: block;
+                    position: absolute;
+                    bottom: 100px;
+                    left: 20px;
+                }
+                #assignatories2 {
+                    display: block;
+                    position: absolute;
+                    bottom: 75px;
+                    left: 20px;
+                }
+                #assignatories3 {
+                    display: block;
+                    position: absolute;
+                    bottom: 50px;
+                    left: 20px;
+                }
+                #assignatories4 {
+                    display: block;
+                    position: absolute;
+                    bottom: 25px;
+                    left: 20px;
+                }
             }
     </style>
     <svg xmlns="http://www.w3.org/2000/svg" class="w-10 rotate-[45deg] hidden" viewBox="0 0 1200 1200" id="logo">
@@ -78,6 +102,10 @@
         <path id="Rectangle_2_copy_2" data-name="Rectangle 2 copy 2" class="cls-1" d="M71,557l408,0.019,0,85.991-408-.019Z"/>
     </svg>
     <h2 class="text-2xl font-bold text-darkGreenBPC hidden" id="envote">ENVote</h2>
+        <h2 id="assignatories1" class="hidden text-2xl">Authorized By:</h2>
+        <span id="assignatories2" class="hidden text-2xl">Dean of Student Affairs - Mrs. Marissa B. Mendoza </span>
+        <span id="assignatories3" class="hidden text-2xl">SMIS Head - Doc Rosemarie Guirre </span>
+        <span id="assignatories4" class="hidden text-2xl">SG President - Rocel B. Canlas</span>
     <h2 class="text-xl font-bold hidden" id="author">Admin: {{auth()->guard('admin')->user()->firstName ." ". auth()->guard('admin')->user()->lastName}}</h2>
     <div class="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
         <button id="print-button" class="text-xs bg-greenBPC p-2 px-3 flex items-center text-white hover:bg-darkGreenBPC rounded-md cursor-pointer fixed bottom-0 right-0 translate-x-[-15px] translate-y-[-15px]">Generate Report</button>

@@ -37,6 +37,7 @@
                 <!-- Form -->
                 <form class="mt-4 w-full flex flex-col m-auto px-3 sm:px-10 rounded-md" method="POST" action = "{{URL('/fileCandidacy/store')}}">
                     @csrf
+                    <input type="hidden" name="electionID" value="{{$election->id}}">
                     <div class="mb-3 w-full">
                         <label for='position_id' class="mb-2 block text-xs font-semibold">Position</label>
                         <select name="position_id" id="position_id" class="block w-full rounded-lg border border-gray-200 shadow-md focus:border-greenBPC focus:outline-none focus:ring-1 focus:ring-greenBPC p5-1.5 text-gray-500">

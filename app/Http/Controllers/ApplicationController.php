@@ -35,7 +35,10 @@ class ApplicationController extends Controller
     }
     // onsubmit of filing candidacy form action
     public function store(Request $request){
-
+        $election = Election::where('id', $request->electionID)->first();
+        if ($election->status != 'openForFiling') {
+            return redirect('/');
+        }
         $formFields = $request->validate([
             'position_id' => 'required',
             'party' => 'required'
