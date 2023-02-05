@@ -73,7 +73,7 @@
                                         <h2 class = "absolute w-[75px] left-0 ml-[-20px] md:ml-[-65px]
                                         font-bold text-xl text-darkGreenBPC text-center">{{$totalVotes !=0 ? ordinal($counter += 1) : "--"}}
                                         </h2>
-                                        <img src="{{$candidate->cprofile->displayPhoto ? asset('storage/'.$candidate->cprofile->displayPhoto) : asset('assets/icons/userProfileIcon.png')}}" class="w-20 h-20 rounded-full md:ml-2">
+                                        <img src="{{$candidate->cprofile->displayPhoto ? asset('storage/'.$candidate->cprofile->displayPhoto) : asset('assets/icons/userProfileIcon.png')}}" class="w-20 h-20 aspect-square rounded-full md:ml-2">
                                         <div class="flex flex-col items-start ml-5 w-full">
                                             <h2 class="pres-kun font-bold text-xl mt-3 md:mt-0 text-black/80">{{$candidate->lastName . ", " . $candidate->firstName . " " . ($candidate->middleName || strtolower($candidate->middleName) != "n/a" ? substr($candidate->middleName, 0, 1) . "." : "")}}</h2>
                                             <h3 class=" text-darkGreenBPC font-bold text-2xl pb-2 mt-3 flex items-end">{{$candidate->votes}}

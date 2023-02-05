@@ -1,6 +1,6 @@
 <!-- announcement title -->
 <h2 class = "text-center text-darkGreenBPC my-6 text-2xl sm:text-3xl font-bold">
-    Announcement
+    Announcements
 </h2>
 
 <!-- announcements container -->
