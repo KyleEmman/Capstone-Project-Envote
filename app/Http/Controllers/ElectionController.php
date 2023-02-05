@@ -45,6 +45,12 @@ class ElectionController extends Controller
 
     }
     public function retrieve(Electionarchive $election){
+        if ($election->status == 'Ongoing') {
+            if (Election::where('for', $election->for)->where('campus', $election->campus)->where('status', 'Ongoing')->orWhere('status', 'Onhold')->first()) {
+                return back()->with('errorMessage', 'There is an existing ongoing election for this campus');
+            }
+        }
+
         $electionField = [
             'id' => $election->id,
             'title' => $election->title,
@@ -64,6 +70,7 @@ class ElectionController extends Controller
         $addVoteinfos = (new VoteinfoController)->retrieve($voteinfos);
         $addCertificates = (new CertificateController)->retrieve($certificates);
         $addCandidatearchive = false;
+
 
         foreach ($positions as $position){
             $candidates = $position->candidates()->get();
@@ -90,9 +97,15 @@ class ElectionController extends Controller
             'status' => $request->electionStatus,
         ];
         $electionCheck = Election::where('id', $request->electionID)->first();
-        if ($request->electionStatus == 'Ongoing') {
-            if (Election::where('for', $electionCheck->for)->where('campus', $electionCheck->campus)->where('status', 'Ongoing')->orWhere('status', 'Onhold')->first()) {
-                return back()->with('errorMessage', 'There is an existing ongoing election for this campus');
+        
+        if($electionCheck->status == 'Ongoing' || $electionCheck->status == 'Onhold'){
+            //this should be empty
+        }
+        else {
+            if ($request->electionStatus == 'Ongoing') {
+                if (Election::where('for', $electionCheck->for)->where('campus', $electionCheck->campus)->where('status', 'Ongoing')->orWhere('status', 'Onhold')->first()) {
+                    return back()->with('errorMessage', 'There is an existing ongoing election for this campus');
+                }
             }
         }
         if ($electionCheck) {

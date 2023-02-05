@@ -20,7 +20,7 @@
     body {
     -webkit-print-color-adjust: exact !important;
     }
-    @page { size: 11in 8.5in !important; }
+    @page { size: A4 !important; }
     @page { margin: 0mm !important; }
     @page {size: landscape !important;}
     button {
@@ -33,7 +33,7 @@
     rounded-md hover:bg-darkGreenBPC">
         Save PDF
     </button>
-    <div class="w-[1056px] h-[816px] m-auto bg-[#e6fcd8] relative overflow-hidden" id="certificate">
+    <div id = "printable-content" class="w-[1056px] h-[816px] m-auto bg-[#e6fcd8] relative overflow-hidden" id="certificate">
         <!-- top left yellow div -->
         <div class="bg-greenBPC h-[150px] w-[800px] rotate-[-10deg] translate-y-[-85px] 
         translate-x-[-100px] absolute"></div>
@@ -47,10 +47,10 @@
         <div class="bg-greenBPC h-[100px] w-[800px] rotate-[-10deg] absolute bottom-0 right-0
         translate-x-[250px] translate-y-[50px] z-[5]"></div>
         <!-- bottom right orange div big -->
-        <div class="bg-darkGreenBPC h-[300px] w-[900px] rotate-[-25deg] absolute bottom-0 right-0
-        translate-x-[250px] translate-y-[60px]"></div>
+        <div class="bg-darkGreenBPC h-[250px] w-[900px] rotate-[-25deg] absolute bottom-0 right-0
+        translate-x-[250px] translate-y-[60px] "></div>
         <!-- border na black -->
-        <div class="h-[96%] w-[96%] absolute m-[2%] border border-black z-[10]"></div>
+        <div class="h-[96%] w-[96%] absolute m-[2%] border border-black z-50"></div>
         
         <div class="flex flex-col items-center justify-center gap-1 mt-[35px]">
             <img src="{{asset('assets/icons/BPCLogo.png')}}" alt='bpc-logo' class="w-20">
@@ -67,7 +67,7 @@
             <h2 class="font-mono my-3">This is issued for the purpose of end-of-semester clearance</h2>
             <h2 class="font-mono mt-4 border-t border-black">DR. ROSEMARIE S. GUIRRE</h2>
             <h2 class="font-mono">MIS Dept. Head</h2>
-            <div class = "z-50 w-[120px] absolute bottom-[90px] right-[100px]">
+            <div class = "z-50 w-[90px] aspect-square absolute bottom-[90px] right-[100px]">
             {!! QrCode::size(100)->backgroundColor(3,73,25)->generate($cert->url) !!}
             </div>
         </div>

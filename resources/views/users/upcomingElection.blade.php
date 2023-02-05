@@ -24,7 +24,7 @@
                 <!-- position -->
                 <div class="w-full md:w-[calc(50%-16px)]  md:ml-2 flex flex-col">
                     <!-- position title -->
-                    <div style = "background-image: url('{{asset('assets/img/Campus.jpg')}}')"
+                    <div style = "background-image: url('{{asset('assets/img/Campus.jpg')}}');"
                     class="text-start md:mx-10 bg-cover bg-no-repeat bg-center
                     w-8/12 rounded-tr-full rounded-l-[500px]
                     font-medium text-white text-xl overflow-hidden relative p-4">
@@ -51,7 +51,7 @@
                                 <!-- candidate number 1 -->
                                 <li onclick = "showProfileModal('{{$candidate->id}}')" class = "bg-white shadow-md border border-gray-100 cursor-pointer hover:bg-gray-100 my-6 md:pl-16 py-4 rounded-lg relative px-5 md:px-14">
                                     <div class="flex items-center flex-col md:flex-row relative">
-                                        <img src="{{$candidate->cprofile->displayPhoto ? asset('storage/'.$candidate->cprofile->displayPhoto) : asset('assets/icons/userProfileIcon.png')}}" class="w-20 h-20 rounded-full md:ml-2">
+                                        <img src="{{$candidate->cprofile->displayPhoto ? asset('storage/'.$candidate->cprofile->displayPhoto) : asset('assets/icons/userProfileIcon.png')}}" class="w-20 h-20 rounded-full aspect-square md:ml-2">
                                         <div class="flex flex-col items-start ml-5 w-full">
                                             <h2 class="pres-kun font-bold text-xl mt-3 md:mt-0 text-black/80">{{$candidate->lastName . ", " . $candidate->firstName . " " . ($candidate->middleName || strtolower($candidate->middleName) != "n/a" ? substr($candidate->middleName, 0, 1) . "." : "")}}</h2>
                                             <h2 class="font-bold text-xl mt-3 md:mt-0 text-black/80">({{$candidate->party}})</h2>

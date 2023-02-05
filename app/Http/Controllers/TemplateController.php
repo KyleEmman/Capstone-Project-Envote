@@ -40,7 +40,7 @@ class TemplateController extends Controller
     }
 
     public function duplicate(Template $template){
-        $reference = Template::find($template);
+        $reference = Template::find($template)->first();
         $positions = $reference->templateinfos()->pluck('positionName')->toArray();
         $createTemplate = $reference->replicate();
         $createTemplate->title .= " copy ";
